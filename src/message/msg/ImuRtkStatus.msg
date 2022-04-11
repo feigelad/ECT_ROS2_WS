@@ -1,0 +1,4 @@
+std_msgs/Header header
+common/Uint8TimeStamped imu_rtkstatus
+common/Uint8TimeStamped imu_dmistatus
+common/Uint8TimeStamped imu_gpsstatus

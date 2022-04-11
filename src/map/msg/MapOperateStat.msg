@@ -1,0 +1,7 @@
+std_msgs/Header header
+string name
+float64 time_stamp
+uint8 map_execute_code
+uint8 map_execute_stat
+string map_excute_debug_string
+string map_names

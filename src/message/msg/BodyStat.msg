@@ -1,0 +1,12 @@
+std_msgs/Header header
+common/Uint8TimeStamped cdcu_acostoptic_workmode
+common/Uint8TimeStamped cdcu_headlamp_stat
+common/Uint8TimeStamped cdcu_dblflashlamp_stat
+common/Uint8TimeStamped cdcu_turnllamp_stat
+common/Uint8TimeStamped cdcu_turnrlamp_stat
+common/Uint8TimeStamped cdcu_backlamp_stat
+common/Uint8TimeStamped cdcu_buzzer_stat
+common/Uint8TimeStamped cdcu_horn_stat
+common/Uint8TimeStamped cdcu_runlamp_stat
+common/Uint8TimeStamped cdcu_brklamp_stat
+common/Uint8TimeStamped cdcu_bcm_errlevel

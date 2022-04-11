@@ -1,0 +1,7 @@
+std_msgs/Header header
+common/Uint8TimeStamped imu_gpsflag_pos
+common/Uint8TimeStamped imu_numsv
+common/Uint8TimeStamped imu_gpsflag_heading
+common/Uint8TimeStamped imu_gpsage
+common/Uint8TimeStamped imu_carstatus
+common/Uint8TimeStamped imu_insstatus

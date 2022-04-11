@@ -1,0 +1,5 @@
+std_msgs/Header header
+common/FloatTimeStamped imu_rtkspeed_east
+common/FloatTimeStamped imu_rtkspeed_north
+common/FloatTimeStamped imu_rtkspeed_vert
+common/FloatTimeStamped imu_rtkspeed_horiz

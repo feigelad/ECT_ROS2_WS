@@ -1,0 +1,6 @@
+std_msgs/Header header
+float64 time_stamp
+float32 sim_accel_x
+float32 sim_accel_x_err
+float32 sim_accel_y
+float32 sim_accel_y_err

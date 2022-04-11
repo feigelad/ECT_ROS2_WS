@@ -1,0 +1,4 @@
+std_msgs/Header header
+common/FloatTimeStamped imu_rtkatt_yawcov
+common/FloatTimeStamped imu_rtkatt_pitchcov
+common/FloatTimeStamped imu_rtkatt_rollcov

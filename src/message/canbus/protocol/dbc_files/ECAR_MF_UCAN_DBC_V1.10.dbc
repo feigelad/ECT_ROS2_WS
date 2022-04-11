@@ -1,0 +1,996 @@
+VERSION "20161013-131533-159"
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BCM UCS ADCU CDCU
+VAL_TABLE_ CDCU_TirePressure_St 3 "Reserved" 2 "UnderPressure" 1 "OverPressure" 0 "Normal" ;
+VAL_TABLE_ InvalidOrValid 1 "Valid" 0 "Invalid" ;
+VAL_TABLE_ CDCU_CANBusoff_St 3 "All BussOff" 2 "UCAN BusOff" 1 "CCAN BusOff" 0 "All Normal" ;
+VAL_TABLE_ ADCU_Alignment 2 "Right" 1 "Center" 0 "Left" ;
+VAL_TABLE_ ADCU_FontSize 2 "Large" 1 "Middle" 0 "Small" ;
+VAL_TABLE_ ADCU_BgColor 4 "Green" 3 "Blue" 2 "Red" 1 "White" 0 "Black" ;
+VAL_TABLE_ ADCU_StuntSpeed 2 "Speed3" 1 "Speed2" 0 "Speed1" ;
+VAL_TABLE_ ADCU_StuntType 4 "Motionless" 3 "Push Right" 2 "Push Left" 1 "Push Down" 0 "Push Up" ;
+VAL_TABLE_ UCS_VehVINWrite 10 "VIN Write Req " 0 "Invalid" ;
+VAL_TABLE_ ADCU_TripClear 1 "Clear" 0 "Don't Clear" ;
+VAL_TABLE_ ADCU_Cld_TgtGear 15 "Reserve" 14 "Reserve" 13 "Reserve" 12 "Reserve" 11 "Reserve" 10 "Reserve" 9 "Reserve" 8 "Reserve" 7 "Reserve" 6 "Reserve" 5 "Reserve" 4 "Reserve" 3 "Reserve" 2 "R" 1 "D" 0 "N" ;
+VAL_TABLE_ ADCU_Cld_DriveMode 3 "Reserved" 2 "Reserved" 1 "Speed Control" 0 "Throttle Control" ;
+VAL_TABLE_ ADCU_VehPwrup_Cmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_TABLE_ ADCU_Drv_TgtGear 3 "Reserve" 2 "R" 1 "D" 0 "N" ;
+VAL_TABLE_ ADCU_Drv_CtrlMode 3 "Reserved" 2 "Reserved" 1 "Speed Control" 0 "Throttle Control" ;
+VAL_TABLE_ ADCU_Str_CtrlMode 1 "Curvature Mode" 0 "Angle Control Mode" ;
+VAL_TABLE_ ADCU_Brk_CtrlMode 3 "Reserved" 2 "Vehicle Speed Mode" 1 "Brake Pressure Mode" 0 "Brake Pedal Pos Mode" ;
+VAL_TABLE_ CDCU_PowerState 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Void" ;
+VAL_TABLE_ CDCU_Veh_RunDir 3 "Reserved" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_TABLE_ CDCU_BMS_FeedBackSt 1 "Current Feedback" 0 "Not Current Feedback" ;
+VAL_TABLE_ CDCU_BMS_DisChgSt 1 "Discharge" 0 "Not Discharge" ;
+VAL_TABLE_ CDCU_BMS_ChgSt 1 "Charging" 0 "Not Charg" ;
+VAL_TABLE_ CDCU_EmgcyPark_St 3 "Reserved" 2 "Reserved" 1 "Enabled" 0 "Released" ;
+VAL_TABLE_ CDCU_MCU_RunDir 3 "Reserve" 2 "Backward" 1 "Forward" 0 "Stoped" ;
+VAL_TABLE_ CDCU_MCU_GearAct 3 "Reserve" 2 "R" 1 "D" 0 "N" ;
+VAL_TABLE_ CDCU_Park_St 3 "Reserved" 2 "Emergency Park" 1 "Nomal Park" 0 "Released" ;
+VAL_TABLE_ FalseOrTrue 1 "True" 0 "False" ;
+VAL_TABLE_ ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_TABLE_ CDCU_EHB_BrkMode 3 "Reserved" 2 "Reserved" 1 "Emergency" 0 "Normal" ;
+VAL_TABLE_ CDCU_EHB_WorkMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+
+
+BO_ 298 ADCU_CrashClrCmd: 8 ADCU
+ SG_ ADCU_CrashClr_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_CrashClr_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_CrashClear_Cmd : 6|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_CrashClearCmd_Valid : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 293 ADCU_DriveCmd2: 8 ADCU
+ SG_ ADCU_DrvCmd2_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_DrvCmd2_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Drv_TgtVehSpd4 : 31|16@0+ (0.01,-100) [-100|555.35] "Kmph"  CDCU
+ SG_ ADCU_Drv_TgtVehSpd3 : 15|16@0+ (0.01,-100) [-100|555.35] "Kmph"  CDCU
+ SG_ ADCU_DrvValid_TgtVehSpd4 : 6|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_DrvValid_TgtVehSpd3 : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 292 ADCU_DriveCmd1: 8 ADCU
+ SG_ ADCU_DrvCmd1_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_DrvCmd1_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Drv_TgtVehSpd2 : 31|16@0+ (0.01,-100) [-100|555.35] "Kmph"  CDCU
+ SG_ ADCU_Drv_TgtVehSpd1 : 15|16@0+ (0.01,-100) [-100|555.35] "Kmph"  CDCU
+ SG_ ADCU_DrvValid_TgtVehSpd2 : 6|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_DrvValid_TgtVehSpd1 : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 629 CDCU_TireDiag: 8 CDCU
+ SG_ CDCU_TireDiag_CheckSum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_TireDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_ReceiverOffline_Err : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RtRrSensorOffline_Err : 0|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_LfRrSensorOffline_Err : 1|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RtFtSensorOffline_Err : 2|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_LfFtSensorOffline_Err : 3|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RtRrLowVolt_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_LfRrLowVolt_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RtFtLowVolt_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_LfFtLowVolt_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 628 CDCU_RrTireState: 8 CDCU
+ SG_ CDCU_RrTireState_CheckSum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_RrTireState_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_RtRrTireTemp : 47|8@0+ (1,-50) [-50|205] "¡æ"  ADCU
+ SG_ CDCU_RtRrTirePressure : 31|16@0+ (1,0) [0|65535] "Kpa"  ADCU
+ SG_ CDCU_LfRrTireTemp : 23|8@0+ (1,-50) [-50|205] "¡æ"  ADCU
+ SG_ CDCU_LfRrTirePressure : 7|16@0+ (1,0) [0|65535] "Kpa"  ADCU
+
+BO_ 627 CDCU_FtTireState: 8 CDCU
+ SG_ CDCU_FtTireState_CheckSum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_FtTireState_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_RtFtTireTemp : 47|8@0+ (1,-50) [-50|205] "¡æ"  ADCU
+ SG_ CDCU_RtFtTirePressure : 31|16@0+ (1,0) [0|65535] "Kpa"  ADCU
+ SG_ CDCU_LfFtTireTemp : 23|8@0+ (1,-50) [-50|205] "¡æ"  ADCU
+ SG_ CDCU_LfFtTirePressure : 7|16@0+ (1,0) [0|65535] "Kps"  ADCU
+
+BO_ 626 CDCU_RemoteInfo3: 8 CDCU
+ SG_ CDCU_RmtInfo3_Rchecksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_RmtInfo3_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_RmtChn6_Duty : 39|16@0+ (0.01,0) [0|655.35] "%"  ADCU
+ SG_ CDCU_RmtChn6_Freq : 31|8@0+ (2,0) [0|510] "Hz"  ADCU
+ SG_ CDCU_RmtChn5_Duty : 15|16@0+ (0.01,0) [0|655.35] "%"  ADCU
+ SG_ CDCU_RmtChn5_Freq : 7|8@0+ (2,0) [0|510] "Hz"  ADCU
+
+BO_ 290 ADCU_LcdDataInfo: 8 ADCU
+ SG_ ADCU_LcdData6 : 63|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_LcdData5 : 55|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_LcdData4 : 47|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_LcdData3 : 39|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_LcdData2 : 31|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_LcdData1 : 23|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_CurrentValidDataLength : 10|3@0+ (1,0) [0|7] "Byte"  BCM
+ SG_ ADCU_CurrentDataIndex : 15|5@0+ (1,0) [0|31] ""  BCM
+ SG_ ADCU_TotalDataLength : 7|8@0+ (1,0) [0|255] ""  BCM
+
+BO_ 289 ADCU_LcdTextSet: 8 ADCU
+ SG_ ADCU_Alignment : 55|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_FontColor : 47|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_FontSize : 39|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_BgColor : 31|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_StayTime : 23|8@0+ (1,0) [0|255] "s"  BCM
+ SG_ ADCU_StuntSpeed : 15|8@0+ (1,0) [0|255] ""  BCM
+ SG_ ADCU_StuntType : 7|8@0+ (1,0) [0|255] ""  BCM
+
+BO_ 674 UCS_WriteVehicleVIN: 8 UCS
+ SG_ UCS_Veh_VIN : 7|32@0+ (1,0) [0|4294967295] ""  CDCU
+ SG_ UCS_VehVINWrite_CMD : 55|4@0+ (1,0) [0|15] ""  CDCU
+
+BO_ 599 CDCU_CldDrvTripMeter: 8 CDCU
+ SG_ CDCU_CldDrvTripODO_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_CldDrvTripODO_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_CldDrvODO_Meter : 31|24@0+ (0.1,0) [0|1677721.5] "Km"  ADCU
+ SG_ CDCU_CldDrvTrip_Meter : 7|16@0+ (0.1,0) [0|6553.5] "Km"  ADCU
+
+BO_ 598 CDCU_AutoDrvTripMeter: 8 CDCU
+ SG_ CDCU_AutoDrvTripODO_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_AutoDrvTripODO_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_AutoDrvODO_Meter : 31|24@0+ (0.1,0) [0|1677721.5] "Km"  ADCU
+ SG_ CDCU_AutoDrvTrip_Meter : 7|16@0+ (0.1,0) [0|6553.5] "Km"  ADCU
+
+BO_ 597 CDCU_RmtDrvTripMeter: 8 CDCU
+ SG_ CDCU_RmtDrvTripODO_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_RmtDrvTripODO_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_RmtDrvODO_Meter : 31|24@0+ (0.1,0) [0|1677721.5] "Km"  ADCU
+ SG_ CDCU_RmtDrvTrip_Meter : 7|16@0+ (0.1,0) [0|6553.5] "Km"  ADCU
+
+BO_ 279 ADCU_PowerCmd: 8 ADCU
+ SG_ ADCU_AutDrv_Police24VPwrupCmd : 11|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_AutDrv_Police12VPwrupCmd : 13|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_PwrCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_PwrCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_AutDrv24VPwrup_Cmd : 15|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_12V2Pwrup_Cmd : 1|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_12V1Pwrup_Cmd : 3|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_ChasPwrup_Cmd : 5|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_VehPwrup_Cmd : 7|2@0+ (1,0) [0|3] ""  CDCU
+
+BO_ 595 ADCU_TripClear: 8 ADCU
+ SG_ ADCU_CldDrvTripClear_Cmd : 4|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_AutoDrvTripClear_Cmd : 5|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_RmtDrvTripClear_Cmd : 6|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_TripClear_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_TripClear_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_TotalTripClear_Cmd : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 282 ADCU_CldPowerCmd: 8 ADCU
+ SG_ ADCU_Cld_Police24VPwrupCmd : 11|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Cld_Police12VPwrupCmd : 13|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_CldPwrCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_CldPwrCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Cld_24VPwrupCmd : 15|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Cld_12V2PwrupCmd : 1|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Cld_12V1PwrupCmd : 3|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Cld_ChasPwrupCmd : 5|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Cld_PwrupCmd : 7|2@0+ (1,0) [0|3] ""  CDCU
+
+BO_ 281 ADCU_CldBodyCmd: 8 ADCU
+ SG_ ADCU_CldBodyCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_CldBodyCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Cld_RunLampCmd : 40|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_HornCmd : 41|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_BuzzerCmd : 42|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_BackLampCmd : 43|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_TurnRLampCmd : 44|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_TurnLLampCmd : 45|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_DblFlashLampCmd : 46|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_HeadLampCmd : 47|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 280 ADCU_CldDrvCmd: 8 ADCU
+ SG_ ADCU_CldDrvCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_CldDrvCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Cld_TgtStrAngle : 31|16@0+ (0.1,-1000) [-1000|5553.5] "deg"  CDCU
+ SG_ ADCU_Cld_TgtBrkVal : 23|8@0+ (0.4,0) [0|102] "%"  CDCU
+ SG_ ADCU_Cld_TgtThrotVal : 15|8@0+ (0.4,0) [0|102] "%"  CDCU
+ SG_ ADCU_Cld_TgtGear : 3|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Cld_DriveMode : 5|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Cld_PrkEnable : 6|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Cld_CtrlActive : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 277 ADCU_BodyCmd: 8 ADCU
+ SG_ ADCU_LampCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_LampCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_BrkLamp_Cmd : 23|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_RunLamp_Cmd : 8|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Horn_Cmd : 9|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Buzzer_Cmd : 10|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_BackLamp_Cmd : 11|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_TurnRLamp_Cmd : 12|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_TurnLLamp_Cmd : 13|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_DblFlashLamp_Cmd : 14|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_HeadLamp_Cmd : 15|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_LampCmd_Active : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 276 ADCU_DriveCmd0: 8 ADCU
+ SG_ ADCU_Drv_TgtVehAccSpd : 39|8@0+ (0.1,-15) [-15|10.5] "mps^2"  CDCU
+ SG_ ADCU_DrvCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_DrvCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Drv_VehSpdLimit : 47|8@0+ (0.4,0) [0|102] "Kmph"  CDCU
+ SG_ ADCU_Drv_TgtVehSpd0 : 23|16@0+ (0.01,-100) [-100|555.35] "Kmph"  CDCU
+ SG_ ADCU_Drv_TgtPedpos : 15|8@0+ (1,-100) [-100|155] "%"  CDCU
+ SG_ ADCU_Drv_TgtGear : 1|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Drv_CtrlMode : 6|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Drv_Active : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 275 ADCU_SteerCmd: 8 ADCU
+ SG_ ADCU_StrCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_StrCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Str_TgtCurvature : 31|16@0+ (0.0001,-3) [-3|3.5535] "m^-1"  CDCU
+ SG_ ADCU_Str_TgtAngle : 15|16@0+ (0.005,-90) [-90|237.675] "deg"  CDCU
+ SG_ ADCU_Str_CtrlMode : 6|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Str_Active : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 274 ADCU_ParkCmd: 8 ADCU
+ SG_ ADCU_PrkCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_PrkCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Prk_Enable : 6|1@0+ (1,0) [0|1] ""  CDCU
+ SG_ ADCU_Prk_Active : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 273 ADCU_BrakeCmd: 8 ADCU
+ SG_ ADCU_BrkCmd_Checksum : 63|8@0+ (1,0) [0|255] ""  CDCU
+ SG_ ADCU_BrkCmd_RollCnt : 51|4@0+ (1,0) [0|15] ""  CDCU
+ SG_ ADCU_Brk_TgtAccSpd : 39|16@0+ (0.01,-20) [-20|635.35] "mps^2"  CDCU
+ SG_ ADCU_Brk_TgtPress : 23|16@0+ (0.01,0) [0|655.35] "bar"  CDCU
+ SG_ ADCU_Brk_TgtPedpos : 15|8@0+ (0.4,0) [0|102] "%"  CDCU
+ SG_ ADCU_Brk_CtrlMode : 6|2@0+ (1,0) [0|3] ""  CDCU
+ SG_ ADCU_Brk_Active : 7|1@0+ (1,0) [0|1] ""  CDCU
+
+BO_ 672 CDCU_VehicleVIN: 8 CDCU
+ SG_ CDCU_SW_Version : 47|12@0+ (0.1,0) [0|409.5] ""  ADCU
+ SG_ CDCU_HW_Version : 39|8@0+ (0.1,0) [0|25.5] ""  ADCU
+ SG_ CDCU_VehVIN_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_VehVIN_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Veh_VIN : 7|32@0+ (1,0) [0|4294967295] ""  ADCU
+
+BO_ 625 CDCU_RemoteInfo2: 8 CDCU
+ SG_ CDCU_RmtInfo2_Rchecksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_RmtInfo2_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_RmtChn4_Duty : 39|16@0+ (0.01,0) [0|655.35] "%"  ADCU
+ SG_ CDCU_RmtChn4_Freq : 31|8@0+ (2,0) [0|510] "Hz"  ADCU
+ SG_ CDCU_RmtChn3_Duty : 15|16@0+ (0.01,0) [0|655.35] "%"  ADCU
+ SG_ CDCU_RmtChn3_Freq : 7|8@0+ (2,0) [0|510] "Hz"  ADCU
+
+BO_ 624 CDCU_RemoteInfo1: 8 CDCU
+ SG_ CDCU_RmtInfo1_Rchecksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_RmtInfo1_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_RmtChn2_Duty : 39|16@0+ (0.01,0) [0|655.35] "%"  ADCU
+ SG_ CDCU_RmtChn2_Freq : 31|8@0+ (2,0) [0|510] "Hz"  ADCU
+ SG_ CDCU_RmtChn1_Duty : 15|16@0+ (0.01,0) [0|655.35] "%"  ADCU
+ SG_ CDCU_RmtChn1_Freq : 7|8@0+ (2,0) [0|510] "Hz"  ADCU
+
+BO_ 608 CDCU_PowerStatus: 8 CDCU
+ SG_ CDCU_AutDrvPolice24VPwrSwh_St : 24|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_AutDrvPolice12VPwrSwh_St : 25|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_AutDrvPolice24VPwrSupply_St : 1|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_AutDrvPolice12VPwrSupply_St : 2|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_Pwr_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Pwr_ShutDownCmd : 16|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_PreChgRlySt : 17|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_ChgRlySt : 18|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_DisChgRlySt : 19|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_BatReadySt : 20|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_BatLackSt : 21|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_BatChgSt : 22|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Pwr_PreChgSt : 23|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_PowerState : 10|3@0+ (1,0) [0|7] ""  ADCU
+ SG_ CDCU_AutDrv24VPwrSwh_St : 11|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_12V2PwrSwh_St : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_12V1PwrSwh_St : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_ChasPwrSwh_St : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_VehPwrSwh_St : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_AutDrv24VPwrSupply_St : 3|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_12V2PwrSupply_St : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_12V1PwrSupply_St : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_ChasPwrSupply_St : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_VehPwrSupply_St : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 596 CDCU_TotalTripMeter: 8 CDCU
+ SG_ CDCU_TotalTripODO_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_TotalTripODO_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_TotalODO_Meter : 31|24@0+ (0.1,0) [0|1677721.5] "Km"  ADCU
+ SG_ CDCU_TotalTrip_Meter : 7|16@0+ (0.1,0) [0|6553.5] "Km"  ADCU
+
+BO_ 594 CDCU_VehRrWhlSpd: 8 CDCU
+ SG_ CDCU_RrWhlSpd_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_RrWhlSpd_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Veh_RtRrWhlSpdValid : 54|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Veh_LfRrWhlSpdValid : 55|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Veh_RtRrWhlSpd : 23|16@0+ (0.01,0) [0|655.35] "Kmph"  ADCU
+ SG_ CDCU_Veh_LfRrWhlSpd : 7|16@0+ (0.01,0) [0|655.35] "Kmph"  ADCU
+
+BO_ 593 CDCU_VehFtWhlSpd: 8 CDCU
+ SG_ CDCU_FtWhlSpd_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_FtWhlSpd_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Veh_RtFtWhlSpdValid : 54|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Veh_LfFtWhlSpdValid : 55|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Veh_RtFtWhlSpd : 23|16@0+ (0.01,0) [0|655.35] "Kmph"  ADCU
+ SG_ CDCU_Veh_LfFtWhlSpd : 7|16@0+ (0.01,0) [0|655.35] "Kmph"  ADCU
+
+BO_ 592 CDCU_VehDyncState: 8 CDCU
+ SG_ CDCU_VehDync_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_VehDync_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Veh_RunDir : 55|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_Veh_Curvture : 39|16@0+ (0.0001,-3) [-3|3.5535] "m^-1"  ADCU
+ SG_ CDCU_Veh_LongtdnalAccSpd : 7|16@0+ (0.01,-40) [-40|615.35] "mps^2"  ADCU
+ SG_ CDCU_Veh_LongtdnalSpd : 23|16@0+ (0.00390625,0) [0|255.99609375] "Kmph"  ADCU
+
+BO_ 576 CDCU_VehState: 8 CDCU
+ SG_ CDCU_TirePressure_St : 27|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ VCU_TestSig_U8 : 55|4@0+ (0.1,0) [0|1.5] "" Vector__XXX
+ SG_ VCU_TestSig_U16 : 39|16@0+ (0.1,0) [0|6553.5] "" Vector__XXX
+ SG_ CDCU_CANBusoff_St : 25|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_PDU_ErrLevel : 29|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_BCM_ErrLevel : 31|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_VehSt_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_VehSt_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EPB_ErrLevel : 17|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_EPS_ErrLevel : 19|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_EHB_ErrLevel : 21|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_MCU_ErrLevel : 23|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_BMS_ErrLevel : 10|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_Bat_LowSOC : 11|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_LvBat_LowVolt : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_VehEmgcySwh_St : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RrCrash_St : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_FtCrash_St : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Veh_ErrLevel : 1|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_Veh_RunMode : 7|4@0+ (1,0) [0|15] ""  ADCU
+
+BO_ 547 CDCU_BatDiag: 8 CDCU
+ SG_ CDCU_BatDiag_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_BatDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_BMSLvBatOverVolt_Alarm : 19|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSLvBatUnderVolt_Err : 20|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSLvBatUnderVolt_Alarm : 21|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSUnitOverTemp_Err : 22|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSUnitOverCurt_Err : 23|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSUnitOverVolt_Err : 8|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSUnitUnderVolt_Err : 9|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSOverTemp_Err : 10|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSOverCurt_Err : 11|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSUnderVolt_Err : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSOverVolt_Err : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSLowSOC_Err : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSLowSOC_Alarm : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSMsgOffline_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSMsgChksum_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSMsgDrop_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMSMsgPerd_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 546 CDCU_BatStatus: 8 CDCU
+ SG_ CDCU_BatInfo_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_BatInfo_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_BMS_FeedBackSt : 53|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMS_DisChgSt : 54|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMS_ChgSt : 55|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BMS_BatTemp : 47|8@0+ (1,-50) [-50|205] "¡æ"  ADCU
+ SG_ CDCU_BMS_BatCurt : 39|8@0+ (1,0) [0|255] "A"  ADCU
+ SG_ CDCU_BMS_BatVolt : 31|8@0+ (0.4,0) [0|102] "V"  ADCU
+ SG_ CDCU_BMS_BatSOH : 23|8@0+ (0.4,0) [0|102] "%"  ADCU
+ SG_ CDCU_BMS_BatSOC : 15|8@0+ (0.4,0) [0|102] "%"  ADCU
+ SG_ CDCU_LvBat_Volt : 7|8@0+ (0.1,0) [0|25.5] "V"  ADCU
+
+BO_ 545 CDCU_AntiCrshStatus: 8 CDCU
+ SG_ CDCU_AntiCrash_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_AntiCrash_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EmgcyPark_St : 1|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_RrCrashTrg_St : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_FtCrashTrg_St : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RrCrashContact_St : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_FtCrashContact_St : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 544 CDCU_BodyDiag: 8 CDCU
+ SG_ CDCU_BodyDiag_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_BodyDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_BrkLampShrtCirct_Err : 16|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkLampOpenCirct_Err : 17|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RunLampShrtCirct_Err : 18|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RunLampOpenCirct_Err : 19|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_HornShrtCirct_Err : 20|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_HornOpenCirct_Err : 21|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BuzzerShrtCirct_Err : 22|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BuzzerOpenCirct_Err : 23|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BackLampShrtCirct_Err : 8|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BackLampOpenCirct_Err : 9|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_TurnRLampShrtCirct_Err : 10|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_TurnRLampOpenCirct_Err : 11|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_TurnLLampShrtCirct_Err : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_TurnLLampOpenCirct_Err : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_HeadLampShrtCirct_Err : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_HeadLampOpenCirct_Err : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BodyCmdOffline_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BodyCmdChksum_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BodyCmdDrop_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BodyCmdPerd_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 537 CDCU_BodyStatus: 8 CDCU
+ SG_ CDCU_BCM_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_BCM_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_BCM_ErrLevel : 55|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_BrkLamp_St : 23|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_RunLamp_St : 8|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Horn_St : 9|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_Buzzer_St : 10|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BackLamp_St : 11|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_TurnRLamp_St : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_TurnLLamp_St : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DblFlashLamp_St : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_HeadLamp_St : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_AcostOptic_WorkMode : 7|4@0+ (1,0) [0|15] ""  ADCU
+
+BO_ 536 CDCU_DriveDiag: 8 CDCU
+ SG_ CDCU_DrvDiag_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_DrvDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_MCUEncoder_Err : 29|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMtrPhase_Err : 30|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMtrOverTemp_Err : 31|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUCom_Err : 16|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUOverTemp_Err : 17|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUPwrOverCurt_Err : 18|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUPwrUnderVolt_Err : 19|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUPwrOverVolt_Err : 20|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUPreChg_Err : 21|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUCurtSensor_Err : 22|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMainPwrCur_Err : 23|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMsgOffline_Err : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMsgChksum_Err : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMsgDrop_Err : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_MCUMsgPerd_Err : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvCmdOverRge_Err : 3|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvCmdOffline_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvCmdChksum_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvCmdDrop_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvCmdPerd_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 535 CDCU_DriveStatus: 8 CDCU
+ SG_ CDCU_DrvSt_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_DrvSt_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_MCU_ErrLevel : 55|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_MCU_MtrSpd : 39|16@0+ (1,0) [0|65535] "rpm"  ADCU
+ SG_ CDCU_MCU_MtrCurt : 23|16@0+ (0.1,0) [0|6553.5] "A"  ADCU
+ SG_ CDCU_MCU_ThrotAct : 15|8@0+ (0.4,0) [0|102] "%"  ADCU
+ SG_ CDCU_MCU_RunDir : 1|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_MCU_GearAct : 3|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_MCU_WorkMode : 7|4@0+ (1,0) [0|15] ""  ADCU
+
+BO_ 534 CDCU_SteerDiag: 8 CDCU
+ SG_ CDCU_StrDiag_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_StrDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EPS_ErrCode2 : 31|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_EPS_ErrCode1 : 23|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_EPSMsgOffline_Err : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EPSMsgChksum_Err : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EPSMsgDrop_Err : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EPSMsgPerd_Err : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_StrCmdOverRge_Err : 3|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_StrCmdOffline_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_StrCmdChksum_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_StrCmdDrop_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_StrCmdPerd_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 533 CDCU_SteerStatus: 8 CDCU
+ SG_ CDCU_StrSt_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_StrSt_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EPS_ErrLevel : 55|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EPS_WhlSpd : 39|16@0+ (0.01,-180) [-180|475.35] "deg/s"  ADCU
+ SG_ CDCU_EPS_StrWhlAngle : 23|16@0+ (0.005,-90) [-90|237.675] "deg"  ADCU
+ SG_ CDCU_EPS_StrTrq : 15|8@0+ (0.1,-12.8) [-12.8|12.7] "Nm"  ADCU
+ SG_ CDCU_EPS_WorkMode : 7|4@0+ (1,0) [0|15] ""  ADCU
+
+BO_ 532 CDCU_ParkDiag: 8 CDCU
+ SG_ CDCU_PrkDiag_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_PrkDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EPBMsgOffline_Err : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EPBMsgChksum_Err : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EPBMsgDrop_Err : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EPBMsgPerd_Err : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_PrkCmdOverRge_Err : 3|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_PrkCmdOffline_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_PrkCmdChksum_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_PrkCmdDrop_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_PrkCmdPerd_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 531 CDCU_ParkStatus: 8 CDCU
+ SG_ CDCU_Park_ErrLevel : 55|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Park_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_Park_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_Park_St : 3|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_Park_WorkMode : 7|4@0+ (1,0) [0|15] ""  ADCU
+
+BO_ 530 CDCU_BrakeDiag: 8 CDCU
+ SG_ CDCU_BrkDiag_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_BrkDiag_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EHBCAN_Err : 29|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvMtr_Err : 30|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_DrvBridge_Err : 31|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_ECUPwrSupply_Err : 16|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBPwrSupply_Err : 17|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkPresrSenor_Err : 18|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkPwrSupply_Err : 19|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBOverTemp_Err : 20|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBTempSenor_Err : 21|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBCurtSenor_Err : 22|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkFldLack_Err : 23|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBMsgOffline_Err : 12|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBMsgChksum_Err : 13|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBMsgDrop_Err : 14|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_EHBMsgPerd_Err : 15|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkCmdOverRge_Err : 3|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkCmdOffline_Err : 4|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkCmdChksum_Err : 5|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkCmdDrop_Err : 6|1@0+ (1,0) [0|1] ""  ADCU
+ SG_ CDCU_BrkCmdPerd_Err : 7|1@0+ (1,0) [0|1] ""  ADCU
+
+BO_ 529 CDCU_BrakeStatus: 8 CDCU
+ SG_ CDCU_BrkSt_Checksum : 63|8@0+ (1,0) [0|255] ""  ADCU
+ SG_ CDCU_BrkSt_RollCnt : 51|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EHB_ErrLevel : 55|4@0+ (1,0) [0|15] ""  ADCU
+ SG_ CDCU_EHB_BrkPresur : 15|8@0+ (1,0) [0|255] "bar"  ADCU
+ SG_ CDCU_EHB_BrkMode : 3|2@0+ (1,0) [0|3] ""  ADCU
+ SG_ CDCU_EHB_WorkMode : 7|4@0+ (1,0) [0|15] ""  ADCU
+
+
+
+CM_ SG_ 298 ADCU_CrashClr_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 293 ADCU_DrvCmd2_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 292 ADCU_DrvCmd1_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 629 CDCU_TireDiag_CheckSum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 628 CDCU_RrTireState_CheckSum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 627 CDCU_FtTireState_CheckSum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 626 CDCU_RmtInfo3_Rchecksum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 599 CDCU_CldDrvTripODO_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 598 CDCU_AutoDrvTripODO_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 597 CDCU_RmtDrvTripODO_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 279 ADCU_PwrCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 595 ADCU_TripClear_Checksum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 282 ADCU_CldPwrCmd_Checksum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 281 ADCU_CldBodyCmd_Checksum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 280 ADCU_CldDrvCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 277 ADCU_LampCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 276 ADCU_DrvCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 275 ADCU_StrCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 274 ADCU_PrkCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 273 ADCU_BrkCmd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 672 CDCU_VehVIN_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 625 CDCU_RmtInfo2_Rchecksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 624 CDCU_RmtInfo1_Rchecksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 608 CDCU_Pwr_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 596 CDCU_TotalTripODO_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 594 CDCU_RrWhlSpd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 593 CDCU_FtWhlSpd_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 592 CDCU_VehDync_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 576 CDCU_VehSt_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 547 CDCU_BatDiag_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 546 CDCU_BatInfo_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 544 CDCU_BodyDiag_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 537 CDCU_BCM_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 536 CDCU_DrvDiag_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 534 CDCU_StrDiag_Checksum "Checksum:Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 533 CDCU_StrSt_Checksum "Checksum=Sum(Byte0:Byte6)^0xFF";
+CM_ SG_ 532 CDCU_PrkDiag_Checksum "checksum=Sum(Byte0:Byte6)^0xff";
+CM_ SG_ 531 CDCU_Park_Checksum "checksum=Sum(Byte0:Byte6)^0xff";
+CM_ SG_ 530 CDCU_BrkDiag_Checksum "checksum=Sum(Byte0:Byte6)^0xff";
+CM_ SG_ 529 CDCU_BrkSt_Checksum "checksum=Sum(Byte0:Byte6)^0xff";
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 100000;
+BA_DEF_ SG_  "GenSigStartValue" FLOAT 0 1215752192;
+BA_DEF_ SG_  "GenSigEVName" STRING ;
+BA_DEF_ SG_  "GenSigEnvVarType" ENUM  "int","float","undef";
+BA_DEF_ SG_  "NWM_WakeupAllowed" ENUM  "No","Yes";
+BA_DEF_ SG_  "InvalidHex" STRING ;
+BA_DEF_ BO_  "TpTxIndex" INT 0 10000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 10000;
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "NmMessage" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 100;
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 100000;
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 1000;
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "NetworkInitialization" ENUM  "No","Yes";
+BA_DEF_ BO_  "NetworkWakeUp" ENUM  "No","Yes";
+BA_DEF_ BO_  "NetworkInitializationCommand" ENUM  "No","Yes";
+BA_DEF_ BU_  "ILUsed" ENUM  "No","Yes";
+BA_DEF_ BU_  "NmStationAddress" HEX 0 127;
+BA_DEF_ BU_  "NmNode" ENUM  "No","Yes";
+BA_DEF_ BU_  "NetworkInitializationUsed" ENUM  "No","Yes";
+BA_DEF_ BU_  "NodeLayerModules" STRING ;
+BA_DEF_ BU_  "NmCAN" INT 1 2;
+BA_DEF_ BU_  "GenNodSleepTime" INT 0 1000000;
+BA_DEF_  "NmMessageCount" INT 0 128;
+BA_DEF_  "NmBaseAddress" HEX 0 2047;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "VersionYear" INT 0 3000;
+BA_DEF_  "VersionMonth" INT 0 12;
+BA_DEF_  "VersionDay" INT 0 31;
+BA_DEF_  "VersionNumber" INT 0 10000;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenSigSendType" "Cyclic";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigEVName" "";
+BA_DEF_DEF_  "GenSigEnvVarType" "undef";
+BA_DEF_DEF_  "NWM_WakeupAllowed" "No";
+BA_DEF_DEF_  "InvalidHex" "";
+BA_DEF_DEF_  "TpTxIndex" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "NmMessage" "No";
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 1;
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 10;
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "NetworkInitialization" "No";
+BA_DEF_DEF_  "NetworkWakeUp" "No";
+BA_DEF_DEF_  "NetworkInitializationCommand" "No";
+BA_DEF_DEF_  "ILUsed" "";
+BA_DEF_DEF_  "NmStationAddress" 0;
+BA_DEF_DEF_  "NmNode" "No";
+BA_DEF_DEF_  "NetworkInitializationUsed" "No";
+BA_DEF_DEF_  "NodeLayerModules" "";
+BA_DEF_DEF_  "NmCAN" 1;
+BA_DEF_DEF_  "GenNodSleepTime" 0;
+BA_DEF_DEF_  "NmMessageCount" 0;
+BA_DEF_DEF_  "NmBaseAddress" 0;
+BA_DEF_DEF_  "NmType" "";
+BA_DEF_DEF_  "DBName" "BCAN";
+BA_DEF_DEF_  "VersionYear" 2020;
+BA_DEF_DEF_  "VersionMonth" 12;
+BA_DEF_DEF_  "VersionDay" 23;
+BA_DEF_DEF_  "VersionNumber" 110;
+BA_DEF_DEF_  "Manufacturer" "LiWenChuan";
+BA_DEF_DEF_  "BusType" "";
+BA_ "VersionNumber" 110;
+BA_ "Manufacturer" "ECARTECH";
+BA_ "VersionDay" 31;
+BA_ "VersionMonth" 12;
+BA_ "VersionYear" 2020;
+BA_ "BusType" "CAN";
+BA_ "DBName" "ECAR_UCAN_DBC";
+BA_ "NmStationAddress" BU_ BCM 6;
+BA_ "NmStationAddress" BU_ UCS 7;
+BA_ "NmStationAddress" BU_ CDCU 1;
+BA_ "GenMsgCycleTime" BO_ 298 500;
+BA_ "GenMsgCycleTime" BO_ 293 20;
+BA_ "GenMsgCycleTime" BO_ 292 20;
+BA_ "GenMsgCycleTime" BO_ 629 500;
+BA_ "GenMsgCycleTime" BO_ 628 500;
+BA_ "GenMsgCycleTime" BO_ 627 500;
+BA_ "GenMsgCycleTime" BO_ 626 100;
+BA_ "GenMsgCycleTime" BO_ 290 100;
+BA_ "GenMsgCycleTime" BO_ 289 100;
+BA_ "GenMsgCycleTime" BO_ 674 1000;
+BA_ "GenMsgCycleTime" BO_ 599 1000;
+BA_ "GenMsgCycleTime" BO_ 598 1000;
+BA_ "GenMsgCycleTime" BO_ 597 1000;
+BA_ "GenMsgCycleTime" BO_ 279 100;
+BA_ "GenMsgCycleTime" BO_ 595 100;
+BA_ "GenMsgCycleTime" BO_ 282 20;
+BA_ "GenMsgCycleTime" BO_ 281 20;
+BA_ "GenMsgCycleTime" BO_ 280 20;
+BA_ "GenMsgCycleTime" BO_ 277 100;
+BA_ "GenMsgCycleTime" BO_ 276 20;
+BA_ "GenMsgCycleTime" BO_ 275 20;
+BA_ "GenMsgCycleTime" BO_ 274 20;
+BA_ "GenMsgCycleTime" BO_ 273 20;
+BA_ "GenMsgCycleTime" BO_ 672 1000;
+BA_ "GenMsgCycleTime" BO_ 625 100;
+BA_ "GenMsgCycleTime" BO_ 624 100;
+BA_ "GenMsgCycleTime" BO_ 608 100;
+BA_ "GenMsgCycleTime" BO_ 596 1000;
+BA_ "GenMsgCycleTime" BO_ 594 20;
+BA_ "GenMsgCycleTime" BO_ 593 20;
+BA_ "GenMsgCycleTime" BO_ 592 20;
+BA_ "GenMsgCycleTime" BO_ 576 100;
+BA_ "GenMsgCycleTime" BO_ 547 100;
+BA_ "GenMsgCycleTime" BO_ 546 100;
+BA_ "GenMsgCycleTime" BO_ 545 20;
+BA_ "GenMsgCycleTime" BO_ 544 100;
+BA_ "GenMsgCycleTime" BO_ 537 100;
+BA_ "GenMsgCycleTime" BO_ 536 100;
+BA_ "GenMsgCycleTime" BO_ 535 20;
+BA_ "GenMsgCycleTime" BO_ 534 100;
+BA_ "GenMsgCycleTime" BO_ 533 20;
+BA_ "GenMsgCycleTime" BO_ 532 100;
+BA_ "GenMsgCycleTime" BO_ 531 20;
+BA_ "GenMsgCycleTime" BO_ 530 100;
+BA_ "GenMsgCycleTime" BO_ 529 20;
+BA_ "GenSigStartValue" SG_ 293 ADCU_Drv_TgtVehSpd4 10000;
+BA_ "GenSigStartValue" SG_ 293 ADCU_Drv_TgtVehSpd3 10000;
+BA_ "GenSigStartValue" SG_ 292 ADCU_Drv_TgtVehSpd2 10000;
+BA_ "GenSigStartValue" SG_ 292 ADCU_Drv_TgtVehSpd1 10000;
+BA_ "GenSigStartValue" SG_ 628 CDCU_RtRrTireTemp 50;
+BA_ "GenSigStartValue" SG_ 628 CDCU_LfRrTireTemp 50;
+BA_ "GenSigStartValue" SG_ 627 CDCU_RtFtTireTemp 50;
+BA_ "GenSigStartValue" SG_ 627 CDCU_LfFtTireTemp 50;
+BA_ "GenSigStartValue" SG_ 280 ADCU_Cld_TgtStrAngle 10000;
+BA_ "GenSigStartValue" SG_ 276 ADCU_Drv_TgtVehAccSpd 150;
+BA_ "GenSigStartValue" SG_ 276 ADCU_Drv_TgtVehSpd0 10000;
+BA_ "GenSigStartValue" SG_ 276 ADCU_Drv_TgtPedpos 100;
+BA_ "GenSigStartValue" SG_ 275 ADCU_Str_TgtCurvature 30000;
+BA_ "GenSigStartValue" SG_ 275 ADCU_Str_TgtAngle 18000;
+BA_ "GenSigStartValue" SG_ 273 ADCU_Brk_TgtAccSpd 2000;
+BA_ "GenSigStartValue" SG_ 592 CDCU_Veh_Curvture 30000;
+BA_ "GenSigStartValue" SG_ 592 CDCU_Veh_LongtdnalAccSpd 4000;
+BA_ "GenSigStartValue" SG_ 546 CDCU_BMS_BatTemp 50;
+BA_ "GenSigStartValue" SG_ 533 CDCU_EPS_WhlSpd 18000;
+BA_ "GenSigStartValue" SG_ 533 CDCU_EPS_StrWhlAngle 18000;
+BA_ "GenSigStartValue" SG_ 533 CDCU_EPS_StrTrq 128;
+VAL_ 298 ADCU_CrashClear_Cmd 1 "True" 0 "False" ;
+VAL_ 298 ADCU_CrashClearCmd_Valid 1 "Valid" 0 "Invalid" ;
+VAL_ 293 ADCU_DrvValid_TgtVehSpd4 1 "Valid" 0 "Invalid" ;
+VAL_ 293 ADCU_DrvValid_TgtVehSpd3 1 "Valid" 0 "Invalid" ;
+VAL_ 292 ADCU_DrvValid_TgtVehSpd2 1 "Valid" 0 "Invalid" ;
+VAL_ 292 ADCU_DrvValid_TgtVehSpd1 1 "Valid" 0 "Invalid" ;
+VAL_ 629 CDCU_ReceiverOffline_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_RtRrSensorOffline_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_LfRrSensorOffline_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_RtFtSensorOffline_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_LfFtSensorOffline_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_RtRrLowVolt_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_LfRrLowVolt_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_RtFtLowVolt_Err 1 "True" 0 "False" ;
+VAL_ 629 CDCU_LfFtLowVolt_Err 1 "True" 0 "False" ;
+VAL_ 289 ADCU_Alignment 2 "Right" 1 "Center" 0 "Left" ;
+VAL_ 289 ADCU_FontColor 4 "Green" 3 "Blue" 2 "Red" 1 "White" 0 "Black" ;
+VAL_ 289 ADCU_FontSize 2 "Large" 1 "Middle" 0 "Small" ;
+VAL_ 289 ADCU_BgColor 4 "Green" 3 "Blue" 2 "Red" 1 "White" 0 "Black" ;
+VAL_ 289 ADCU_StuntSpeed 2 "Speed3" 1 "Speed2" 0 "Speed1" ;
+VAL_ 289 ADCU_StuntType 4 "Motionless" 3 "Push Right" 2 "Push Left" 1 "Push Down" 0 "Push Up" ;
+VAL_ 674 UCS_VehVINWrite_CMD 10 "VIN Write Req " 0 "Invalid" ;
+VAL_ 279 ADCU_AutDrv_Police24VPwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 279 ADCU_AutDrv_Police12VPwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 279 ADCU_AutDrv24VPwrup_Cmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 279 ADCU_12V2Pwrup_Cmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 279 ADCU_12V1Pwrup_Cmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 279 ADCU_ChasPwrup_Cmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 279 ADCU_VehPwrup_Cmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 595 ADCU_CldDrvTripClear_Cmd 1 "Clear" 0 "Don't Clear" ;
+VAL_ 595 ADCU_AutoDrvTripClear_Cmd 1 "Clear" 0 "Don't Clear" ;
+VAL_ 595 ADCU_RmtDrvTripClear_Cmd 1 "Clear" 0 "Don't Clear" ;
+VAL_ 595 ADCU_TotalTripClear_Cmd 1 "Clear" 0 "Don't Clear" ;
+VAL_ 282 ADCU_Cld_Police24VPwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 282 ADCU_Cld_Police12VPwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 282 ADCU_Cld_24VPwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 282 ADCU_Cld_12V2PwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 282 ADCU_Cld_12V1PwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 282 ADCU_Cld_ChasPwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 282 ADCU_Cld_PwrupCmd 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Keep" ;
+VAL_ 281 ADCU_Cld_RunLampCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_HornCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_BuzzerCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_BackLampCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_TurnRLampCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_TurnLLampCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_DblFlashLampCmd 1 "True" 0 "False" ;
+VAL_ 281 ADCU_Cld_HeadLampCmd 1 "True" 0 "False" ;
+VAL_ 280 ADCU_Cld_TgtGear 15 "Reserve" 14 "Reserve" 13 "Reserve" 12 "Reserve" 11 "Reserve" 10 "Reserve" 9 "Reserve" 8 "Reserve" 7 "Reserve" 6 "Reserve" 5 "Reserve" 4 "Reserve" 3 "Reserve" 2 "R" 1 "D" 0 "N" ;
+VAL_ 280 ADCU_Cld_DriveMode 3 "Reserved" 2 "Reserved" 1 "Speed Control" 0 "Throttle Control" ;
+VAL_ 280 ADCU_Cld_PrkEnable 1 "True" 0 "False" ;
+VAL_ 277 ADCU_BrkLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_RunLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_Horn_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_Buzzer_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_BackLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_TurnRLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_TurnLLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_DblFlashLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_HeadLamp_Cmd 1 "True" 0 "False" ;
+VAL_ 277 ADCU_LampCmd_Active 1 "True" 0 "False" ;
+VAL_ 276 ADCU_Drv_TgtGear 3 "Reserve" 2 "R" 1 "D" 0 "N" ;
+VAL_ 276 ADCU_Drv_CtrlMode 3 "Reserved" 2 "Reserved" 1 "Speed Control" 0 "Throttle Control" ;
+VAL_ 275 ADCU_Str_CtrlMode 1 "Curvature Mode" 0 "Angle Control Mode" ;
+VAL_ 274 ADCU_Prk_Enable 1 "True" 0 "False" ;
+VAL_ 273 ADCU_Brk_CtrlMode 3 "Reserved" 2 "Vehicle Speed Mode" 1 "Brake Pressure Mode" 0 "Brake Pedal Pos Mode" ;
+VAL_ 608 CDCU_AutDrvPolice24VPwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_AutDrvPolice12VPwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_AutDrvPolice24VPwrSupply_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_AutDrvPolice12VPwrSupply_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_ShutDownCmd 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_PreChgRlySt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_ChgRlySt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_DisChgRlySt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_BatReadySt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_BatLackSt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_BatChgSt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_Pwr_PreChgSt 1 "True" 0 "False" ;
+VAL_ 608 CDCU_PowerState 3 "Restart" 2 "Shutdown" 1 "Starting Up" 0 "Void" ;
+VAL_ 608 CDCU_AutDrv24VPwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_12V2PwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_12V1PwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_ChasPwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_VehPwrSwh_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_AutDrv24VPwrSupply_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_12V2PwrSupply_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_12V1PwrSupply_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_ChasPwrSupply_St 1 "True" 0 "False" ;
+VAL_ 608 CDCU_VehPwrSupply_St 1 "True" 0 "False" ;
+VAL_ 594 CDCU_Veh_RtRrWhlSpdValid 1 "True" 0 "False" ;
+VAL_ 594 CDCU_Veh_LfRrWhlSpdValid 1 "True" 0 "False" ;
+VAL_ 593 CDCU_Veh_RtFtWhlSpdValid 1 "True" 0 "False" ;
+VAL_ 593 CDCU_Veh_LfFtWhlSpdValid 1 "True" 0 "False" ;
+VAL_ 592 CDCU_Veh_RunDir 3 "Reserved" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 576 CDCU_TirePressure_St 3 "Reserved" 2 "UnderPressure" 1 "OverPressure" 0 "Normal" ;
+VAL_ 576 CDCU_CANBusoff_St 3 "All BussOff" 2 "UCAN BusOff" 1 "CCAN BusOff" 0 "All Normal" ;
+VAL_ 576 CDCU_PDU_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_BCM_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_EPB_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_EPS_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_EHB_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_MCU_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_BMS_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_Bat_LowSOC 1 "True" 0 "False" ;
+VAL_ 576 CDCU_LvBat_LowVolt 1 "True" 0 "False" ;
+VAL_ 576 CDCU_VehEmgcySwh_St 1 "True" 0 "False" ;
+VAL_ 576 CDCU_RrCrash_St 1 "True" 0 "False" ;
+VAL_ 576 CDCU_FtCrash_St 1 "True" 0 "False" ;
+VAL_ 576 CDCU_Veh_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 576 CDCU_Veh_RunMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+VAL_ 547 CDCU_BMSLvBatOverVolt_Alarm 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSLvBatUnderVolt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSLvBatUnderVolt_Alarm 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSUnitOverTemp_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSUnitOverCurt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSUnitOverVolt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSUnitUnderVolt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSOverTemp_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSOverCurt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSUnderVolt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSOverVolt_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSLowSOC_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSLowSOC_Alarm 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSMsgOffline_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSMsgChksum_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSMsgDrop_Err 1 "True" 0 "False" ;
+VAL_ 547 CDCU_BMSMsgPerd_Err 1 "True" 0 "False" ;
+VAL_ 546 CDCU_BMS_FeedBackSt 1 "Current Feedback" 0 "Not Current Feedback" ;
+VAL_ 546 CDCU_BMS_DisChgSt 1 "Discharge" 0 "Not Discharge" ;
+VAL_ 546 CDCU_BMS_ChgSt 1 "Charging" 0 "Not Charg" ;
+VAL_ 545 CDCU_EmgcyPark_St 3 "Reserved" 2 "Reserved" 1 "Enabled" 0 "Released" ;
+VAL_ 545 CDCU_RrCrashTrg_St 1 "True" 0 "False" ;
+VAL_ 545 CDCU_FtCrashTrg_St 1 "True" 0 "False" ;
+VAL_ 545 CDCU_RrCrashContact_St 1 "True" 0 "False" ;
+VAL_ 545 CDCU_FtCrashContact_St 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BrkLampShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BrkLampOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_RunLampShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_RunLampOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_HornShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_HornOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BuzzerShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BuzzerOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BackLampShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BackLampOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_TurnRLampShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_TurnRLampOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_TurnLLampShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_TurnLLampOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_HeadLampShrtCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_HeadLampOpenCirct_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BodyCmdOffline_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BodyCmdChksum_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BodyCmdDrop_Err 1 "True" 0 "False" ;
+VAL_ 544 CDCU_BodyCmdPerd_Err 1 "True" 0 "False" ;
+VAL_ 537 CDCU_BCM_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 537 CDCU_BrkLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_RunLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_Horn_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_Buzzer_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_BackLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_TurnRLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_TurnLLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_DblFlashLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_HeadLamp_St 1 "True" 0 "False" ;
+VAL_ 537 CDCU_AcostOptic_WorkMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+VAL_ 536 CDCU_MCUEncoder_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMtrPhase_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMtrOverTemp_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUCom_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUOverTemp_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUPwrOverCurt_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUPwrUnderVolt_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUPwrOverVolt_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUPreChg_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUCurtSensor_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMainPwrCur_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMsgOffline_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMsgChksum_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMsgDrop_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_MCUMsgPerd_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_DrvCmdOverRge_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_DrvCmdOffline_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_DrvCmdChksum_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_DrvCmdDrop_Err 1 "True" 0 "False" ;
+VAL_ 536 CDCU_DrvCmdPerd_Err 1 "True" 0 "False" ;
+VAL_ 535 CDCU_MCU_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 535 CDCU_MCU_RunDir 3 "Reserve" 2 "Backward" 1 "Forward" 0 "Stoped" ;
+VAL_ 535 CDCU_MCU_GearAct 3 "Reserve" 2 "R" 1 "D" 0 "N" ;
+VAL_ 535 CDCU_MCU_WorkMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+VAL_ 534 CDCU_EPSMsgOffline_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_EPSMsgChksum_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_EPSMsgDrop_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_EPSMsgPerd_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_StrCmdOverRge_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_StrCmdOffline_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_StrCmdChksum_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_StrCmdDrop_Err 1 "True" 0 "False" ;
+VAL_ 534 CDCU_StrCmdPerd_Err 1 "True" 0 "False" ;
+VAL_ 533 CDCU_EPS_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 533 CDCU_EPS_WorkMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+VAL_ 532 CDCU_EPBMsgOffline_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_EPBMsgChksum_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_EPBMsgDrop_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_EPBMsgPerd_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_PrkCmdOverRge_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_PrkCmdOffline_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_PrkCmdChksum_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_PrkCmdDrop_Err 1 "True" 0 "False" ;
+VAL_ 532 CDCU_PrkCmdPerd_Err 1 "True" 0 "False" ;
+VAL_ 531 CDCU_Park_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 531 CDCU_Park_St 3 "Reserved" 2 "Emergency Park" 1 "Nomal Park" 0 "Released" ;
+VAL_ 531 CDCU_Park_WorkMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+VAL_ 530 CDCU_EHBCAN_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_DrvMtr_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_DrvBridge_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_ECUPwrSupply_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBPwrSupply_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkPresrSenor_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkPwrSupply_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBOverTemp_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBTempSenor_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBCurtSenor_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkFldLack_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBMsgOffline_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBMsgChksum_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBMsgDrop_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_EHBMsgPerd_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkCmdOverRge_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkCmdOffline_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkCmdChksum_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkCmdDrop_Err 1 "True" 0 "False" ;
+VAL_ 530 CDCU_BrkCmdPerd_Err 1 "True" 0 "False" ;
+VAL_ 529 CDCU_EHB_ErrLevel 3 "Level3" 2 "Level2" 1 "Level1" 0 "None" ;
+VAL_ 529 CDCU_EHB_BrkMode 3 "Reserved" 2 "Reserved" 1 "Emergency" 0 "Normal" ;
+VAL_ 529 CDCU_EHB_WorkMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Cloud" 4 "Emergency" 3 "Automatic" 2 "Remote" 1 "Interrupted" 0 "Standby" ;
+

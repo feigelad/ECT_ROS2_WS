@@ -1,0 +1,3 @@
+std_msgs/Header header
+common/DoubleTimeStamped imu_rtkpos_longitude
+common/DoubleTimeStamped imu_rtkpos_latitude

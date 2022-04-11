@@ -1,0 +1,6 @@
+std_msgs/Header header
+common/Uint8TimeStamped adcu_str_active
+common/Uint8TimeStamped adcu_str_ctrlmode
+common/FloatTimeStamped adcu_str_tgtangle
+common/FloatTimeStamped adcu_str_tgtanglespd
+common/FloatTimeStamped adcu_str_tgtcurvature

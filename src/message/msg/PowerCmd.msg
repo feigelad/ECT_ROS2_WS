@@ -1,0 +1,6 @@
+std_msgs/Header header
+common/Uint8TimeStamped adcu_vehpwrup_cmd
+common/Uint8TimeStamped adcu_chaspwrup_cmd
+common/Uint8TimeStamped adcu_12v1pwrup_cmd
+common/Uint8TimeStamped adcu_12v2pwrup_cmd
+common/Uint8TimeStamped adcu_autdrv24vpwrup_cmd

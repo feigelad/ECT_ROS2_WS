@@ -1,0 +1,4 @@
+std_msgs/Header header
+common/Uint32TimeStamped cdcu_veh_vin
+common/FloatTimeStamped cdcu_hw_version
+common/FloatTimeStamped cdcu_sw_version

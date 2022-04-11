@@ -1,0 +1,3 @@
+std_msgs/Header header
+common/FloatTimeStamped cdcu_trip_meter
+common/FloatTimeStamped cdcu_odo_meter

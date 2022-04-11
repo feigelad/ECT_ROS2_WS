@@ -1,0 +1,8 @@
+std_msgs/Header header
+common/Uint16TimeStamped imu_utctime_year
+common/Uint8TimeStamped imu_utctime_month
+common/Uint8TimeStamped imu_utctime_date
+common/Uint8TimeStamped imu_utctime_hour
+common/Uint8TimeStamped imu_utctime_min
+common/Uint8TimeStamped imu_utctime_intsec
+common/FloatTimeStamped imu_utctime_dotsec

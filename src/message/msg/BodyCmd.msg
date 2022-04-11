@@ -1,0 +1,11 @@
+std_msgs/Header header
+common/Uint8TimeStamped adcu_lampcmd_active
+common/Uint8TimeStamped adcu_headlamp_cmd
+common/Uint8TimeStamped adcu_dblflashlamp_cmd
+common/Uint8TimeStamped adcu_turnllamp_cmd
+common/Uint8TimeStamped adcu_turnrlamp_cmd
+common/Uint8TimeStamped adcu_backlamp_cmd
+common/Uint8TimeStamped adcu_buzzer_cmd
+common/Uint8TimeStamped adcu_horn_cmd
+common/Uint8TimeStamped adcu_runlamp_cmd
+common/Uint8TimeStamped adcu_brklamp_cmd

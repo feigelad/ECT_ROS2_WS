@@ -1,0 +1,8 @@
+std_msgs/Header header
+common/Uint8TimeStamped cdcu_mcu_workmode
+common/Uint8TimeStamped cdcu_mcu_gearact
+common/Uint8TimeStamped cdcu_mcu_rundir
+common/FloatTimeStamped cdcu_mcu_throtact
+common/FloatTimeStamped cdcu_mcu_mtrcurt
+common/FloatTimeStamped cdcu_mcu_mtrspd 
+common/Uint8TimeStamped cdcu_mcu_errlevel

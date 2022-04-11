@@ -1,0 +1,3 @@
+std_msgs/Header header
+common/Uint32TimeStamped ucs_veh_vin
+common/Uint8TimeStamped ucs_vehvinwrite_cmd

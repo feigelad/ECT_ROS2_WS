@@ -1,0 +1,13 @@
+std_msgs/Header header
+common/Uint8TimeStamped cdcu_veh_runmode
+common/Uint8TimeStamped cdcu_veh_errlevel
+common/Uint8TimeStamped cdcu_vehcrashcontact_st
+common/Uint8TimeStamped cdcu_vehcrashtrg_st
+common/Uint8TimeStamped cdcu_vehemgcyswh_st
+common/Uint8TimeStamped cdcu_lvbat_lowvolt
+common/Uint8TimeStamped cdcu_bat_lowsoc
+common/Uint8TimeStamped cdcu_bms_errlevel
+common/Uint8TimeStamped cdcu_mcu_errlevel
+common/Uint8TimeStamped cdcu_ehb_errlevel
+common/Uint8TimeStamped cdcu_eps_errlevel
+common/Uint8TimeStamped cdcu_epb_errlevel

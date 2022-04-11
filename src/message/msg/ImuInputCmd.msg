@@ -1,0 +1,3 @@
+std_msgs/Header header
+common/Uint8TimeStamped cdcu_veh_rundirect
+common/FloatTimeStamped cdcu_veh_speedkmph

@@ -1,0 +1,9 @@
+std_msgs/Header header
+string node_name
+string task_name
+bool is_alive
+float32 standard_period
+float32 real_period
+float64 start_time
+float64 last_run_time
+float64 alive_time

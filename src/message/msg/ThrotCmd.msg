@@ -1,0 +1,8 @@
+std_msgs/Header header
+common/Uint8TimeStamped adcu_drv_active
+common/Uint8TimeStamped adcu_drv_ctrlmode
+common/Uint8TimeStamped adcu_drv_tgtgear
+common/FloatTimeStamped adcu_drv_tgtpedpos
+common/FloatTimeStamped adcu_drv_tgtvehspd
+common/FloatTimeStamped adcu_drv_tgtvehaccspd
+common/FloatTimeStamped adcu_drv_vehspdlimit

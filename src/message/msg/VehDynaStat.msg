@@ -1,0 +1,5 @@
+std_msgs/Header header
+common/FloatTimeStamped cdcu_veh_longtdnalspd
+common/FloatTimeStamped cdcu_veh_longtdnalacc
+common/FloatTimeStamped cdcu_veh_curvture
+common/Uint8TimeStamped cdcu_veh_rundir

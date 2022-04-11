@@ -1,0 +1,3 @@
+std_msgs/Header header
+common/Uint16TimeStamped imu_weektime_weeks
+common/DoubleTimeStamped imu_weektime_weeksecs

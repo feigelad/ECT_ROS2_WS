@@ -1,0 +1,10 @@
+std_msgs/Header header
+common/Uint8TimeStamped cdcu_prkcmdperd_err
+common/Uint8TimeStamped cdcu_prkcmddrop_err
+common/Uint8TimeStamped cdcu_prkcmdchksum_err
+common/Uint8TimeStamped cdcu_prkcmdoffline_err
+common/Uint8TimeStamped cdcu_prkcmdoverrge_err
+common/Uint8TimeStamped cdcu_epbmsgperd_err
+common/Uint8TimeStamped cdcu_epbmsgdrop_err
+common/Uint8TimeStamped cdcu_epbmsgchksum_err
+common/Uint8TimeStamped cdcu_epbmsgoffline_err

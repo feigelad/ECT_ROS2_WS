@@ -1,0 +1,5 @@
+std_msgs/Header header
+common/FloatTimeStamped cdcu_rmtchn1_freq
+common/FloatTimeStamped cdcu_rmtchn1_duty
+common/FloatTimeStamped cdcu_rmtchn2_freq
+common/FloatTimeStamped cdcu_rmtchn2_duty
