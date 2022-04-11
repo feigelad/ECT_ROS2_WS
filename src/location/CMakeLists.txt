@@ -47,7 +47,7 @@ ament_export_dependencies(rosidl_default_runtime)
 ##==============End Interfaces========================================
 
 link_directories(
-  /home/benchu/workspace/nirvana_ros2/build/common
+  /workspaces/ECT_ROS2_WS/build/common
   # /home/benchu/workspace/nirvana_ros2/build/vehicle
 )
 
@@ -58,56 +58,56 @@ file(GLOB location_rtk_srcs
   "rtk/ins570d/*.cc"
   "rtk/m2/*.cc"  
 )
-add_library(location_rtk SHARED
-  ${location_rtk_srcs}
-)
-target_include_directories(location_rtk PUBLIC
-  rtk
-  rtk/ins570d
-  rtk/m2
-)
-ament_target_dependencies(location_rtk 
-  # common_logger
-  geometry_msgs
-  rclcpp
-  message
-)
-target_link_libraries(location_rtk  
-  common_quaternion
-  proj
-)
-rosidl_target_interfaces(location_rtk
-${PROJECT_NAME} "rosidl_typesupport_cpp")
+# add_library(location_rtk SHARED
+#   ${location_rtk_srcs}
+# )
+# target_include_directories(location_rtk PUBLIC
+#   rtk
+#   rtk/ins570d
+#   rtk/m2
+# )
+# ament_target_dependencies(location_rtk 
+#   # common_logger
+#   geometry_msgs
+#   rclcpp
+#   message
+# )
+# target_link_libraries(location_rtk  
+#   common_quaternion
+#   proj
+# )
+# rosidl_target_interfaces(location_rtk
+# ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
 ##==============End Libraries===================================
 
-add_executable(location_node src/location_node.cpp)
-target_include_directories(location_node PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>
-  src
-)
-ament_target_dependencies(location_node
-  "std_msgs"
-  "geometry_msgs"
-  "rclcpp"
-)
-target_link_libraries(location_node
-  common_communication
-  common_schedule_thread_manager
-  common_schedule_task_thread
-  common_logger
-  common_time
-  common_transform_broadcaster
-  common_transform_listener
-  # common_algorithm_pid
-  location_rtk
-)
-rosidl_target_interfaces(location_node
-  ${PROJECT_NAME} "rosidl_typesupport_cpp")
+# add_executable(location_node src/location_node.cpp)
+# target_include_directories(location_node PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>
+#   src
+# )
+# ament_target_dependencies(location_node
+#   "std_msgs"
+#   "geometry_msgs"
+#   "rclcpp"
+# )
+# target_link_libraries(location_node
+#   common_communication
+#   common_schedule_thread_manager
+#   common_schedule_task_thread
+#   common_logger
+#   common_time
+#   common_transform_broadcaster
+#   common_transform_listener
+#   # common_algorithm_pid
+#   location_rtk
+# )
+# rosidl_target_interfaces(location_node
+#   ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
-install(TARGETS location_node
-  DESTINATION lib/${PROJECT_NAME})
+# install(TARGETS location_node
+#   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

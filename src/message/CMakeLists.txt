@@ -102,8 +102,10 @@ ament_export_dependencies(rosidl_default_runtime)
 ##==============End Interfaces========================================
 
 link_directories(
-  /home/benchu/workspace/nirvana_ros2/build/common
-  /home/benchu/workspace/nirvana_ros2/build/message
+  /workspaces/ECT_ROS2_WS/build/common
+  /workspaces/ECT_ROS2_WS/build/message
+  # ${workspaceFolder}/build/common
+  # ${workspaceFolder}/build/message
   canbus/third_party/zlg_can
 )
 
@@ -200,6 +202,7 @@ ament_target_dependencies(canbus_node
   rclcpp
   common
 )
+
 target_link_libraries(canbus_node
   # std_msgs
   # rclcpp

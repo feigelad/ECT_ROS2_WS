@@ -70,4 +70,7 @@
         ".vscode-insiders",
         ".devcontainer/devcontainer.json"
     ],
+    "cSpell.enableFiletypes": [
+        "!cpp"
+    ],
 }

@@ -47,8 +47,8 @@ ament_export_dependencies(rosidl_default_runtime)
 ##==============End Interfaces========================================
 
 link_directories(
-  /home/benchu/workspace/nirvana_ros2/build/common
-  /home/benchu/workspace/nirvana_ros2/build/vehicle
+  /workspaces/ECT_ROS2_WS/build/common
+  /workspaces/ECT_ROS2_WS/build/vehicle
 )
 
 ##==============Add Libraries===================================

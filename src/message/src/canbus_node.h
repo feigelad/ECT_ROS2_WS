@@ -5,6 +5,7 @@
 // #include "ros/ros.h"
 // #include "dynamic_reconfigure/server.h"
 #include <rclcpp/rclcpp.hpp>
+// #include "../../common/syslog/log_factory.h"
 #include "../../common/syslog/log_factory.h"
 #include "../../message/canbus/can_dev/candev_factory.h"
 #include "../../message/canbus/protocol/canbus_protocol_factory.h"
